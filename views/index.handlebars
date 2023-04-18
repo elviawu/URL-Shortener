@@ -12,7 +12,7 @@
   {{!-- output part --}}
   {{#if url}}
   <div class="input-group mb3">
-    <a href="/{{ url.shortUrl }}" class="form-control" name="shortUrl" id="shortUrl">{{ origin }}/{{ url.shortUrl }}</a>
+    <a href="/{{ url.shortUrl }}" class="form-control" name="shortUrl" id="shortUrl" target="_blank">{{ origin }}/{{ url.shortUrl }}</a>
     <button type="button" class="btn btn-primary" id="copy-btn" onclick="copyFunction()">Copy</button>
   </div>
   <script>
