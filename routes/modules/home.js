@@ -38,7 +38,6 @@ router.post('/', (req, res) => {
 })
 //設定路由 : 按下短網址導回原網址
 router.get('/:shortUrl', (req, res) => {
-  console.log(req.params)
   const shortUrl = req.params.shortUrl
   Url.findOne({ shortUrl: shortUrl })
     .lean()

@@ -1,3 +1,4 @@
+// 隨機號碼產生器
 function sample(sources) {
   const index = Math.floor(Math.random() * sources.length)
   return sources[index]
