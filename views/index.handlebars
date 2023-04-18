@@ -1,1 +1,29 @@
-<h1>Test for URL-SHORTENER</h1>
+<div class="container w-75 p-3">
+  {{!-- input part --}}
+  <Form action='/' method="POST" id="inputUrl">
+    <div class="row mt-2">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" name="origUrl" id="origUrl" placeholder="Enter link here"
+          value="{{ url.origUrl }}">
+        <button type="submit" class="btn btn-outline-primary">Shorten URL</button>
+      </div>
+    </div>
+  </Form>
+  {{!-- output part --}}
+  {{#if url}}
+  <div class="input-group mb3">
+    <a href="/{{ url.shortUrl }}" class="form-control" name="shortUrl" id="shortUrl">{{ origin }}/{{ url.shortUrl }}</a>
+    <button type="button" class="btn btn-primary" id="copy-btn" onclick="copyFunction()">Copy</button>
+  </div>
+  <script>
+    // 網址複製功能
+    function copyFunction() {
+      const urlToCopy = document.getElementById('shortUrl')
+      console.log(urlToCopy.value)
+      navigator.clipboard.writeText(urlToCopy.innerText)
+        .then(() => alert('URL copied!'))
+        .catch(error => console.log(error))
+    }
+  </script>
+  {{/if}}
+</div>
